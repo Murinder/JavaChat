@@ -20,13 +20,13 @@ class Patient implements Runnable {
         try {
             therapistSemaphore.acquire();
             System.out.println(name + " зашел к терапевту");
-            Thread.sleep(100); // имитация времени осмотра у терапевта
+            Thread.sleep(100); 
             System.out.println(name + " закончил осмотр");
             therapistSemaphore.release();
 
             mriSemaphore.acquire();
             System.out.println(name + " отправился на МРТ");
-            Thread.sleep(200); // имитация времени обследования на МРТ
+            Thread.sleep(200); 
             System.out.println(name + " закончил МРТ");
             mriSemaphore.release();
         } catch (InterruptedException e) {
